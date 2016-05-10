@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Opina Eventos - &copy; Opina Eventos</title>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/star-rating.css" media="all"
+	rel="stylesheet" type="text/css" />
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../js/star-rating.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css"
+	href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Project name</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<form class="navbar-form navbar-right" role="form">
+						<div class="form-group">
+							<input type="text" placeholder="Email" class="form-control">
+						</div>
+						<div class="form-group">
+							<input type="password" placeholder="Password"
+								class="form-control">
+						</div>
+						<button type="submit" class="btn btn-success">Sign in</button>
+					</form>
+				</div>
+				<!--/.navbar-collapse -->
+			</div>
+		</nav>
+	</div>
+	<div class="jumbotron">
+		<article id="gridPágina" class="gridPágina">
+
+			<header id="gridTopo" class="gridTopo">
+				<h3>
+					<span>WICKED</span>
+				</h3>
+			</header>
+
+			<section id="gridCorpo" class="gridCorpo">
+				<div class="complemTopo">
+					<h6>
+						A partir de 04 de março no Teatro Renault,<br /> o Brasil
+						começará a desvendar os segredos das Bruxas de Oz. Confira os
+						atores que farão parte da montagem original no país, com letras e
+						texto em português.
+					</h6>
+				</div>
+				<div class="gridImgCorpo">
+					<img src="http://premier.ticketsforfun.com.br/dbimages/sfx8252.jpg"
+						title="Wicked no Teatro Renault" alt="Wicked no Teatro Renault"
+						width="500" height="300" />
+				</div>
+				<input id="input-21d" value="2" type="number" class="rating" min=0
+					max=5 step=0.5 data-size="sm">
+			</section>
+
+			<footer id="gridfooter" class="gridfooter">
+				<h4>
+					<span>WICKED</span><br /> REALIZAÇÃO: <span>TIME FOR FUN</span>
+				</h4>
+			</footer>
+		</article>
+		<!--Fim Página 1-->
+
+		<!--Página 2-->
+		<article id="gridPágina" class="gridPágina">
+
+			<header id="gridTopo" class="gridTopo">
+				<h5>INFORMAÇÕES DO EVENTO</h5>
+			</header>
+
+			<section id="gridCorpo" class="gridCorpo">
+
+				<ul>
+					<li>WICKED</li>
+					<li><span>Sessões: </span><br> Quintas e Sextas, às 21h.<br>
+						Sábados, às 16h e 21h.<br> Domingos, às 15h e 20h.</li>
+					<li><span>Local: </span>Teatro Renault.<br> Av.
+						Brigadeiro Luís Antônio, 411 – Bela Vista, São Paulo – SP.</li>
+					<li><span>Apresentação: </span>Grupo Bradesco Seguros..</li>
+					<li><span>Apoio: </span>Multiplus e Raízen.</li>
+					<li><span>Patrocínio: </span>Cielo</li>
+					<li><span>Produção: </span>Marc Platt, Universal Pictures, The
+						Araca Group, Jon B. Platt, David Jones e Time For Fun.</li>
+					<li><span>Capacidade: </span>1530 lugares</li>
+					<li><span>Assentos: </span>O teatro conta com 16 assentos para
+						deficientes físicos e 11 para pessoas obesas.</li>
+					<li><span>Meio de pagamento preferencial: </span>
+						<div class="citi">Bradesco Cartões</div></li>
+					<li><span>Estacionamento:</span> Não possui estacionamento
+						próprio.</li>
+					<li><span>Site: </span><a
+						href="http://www.ticketsforfun.com.br" target="_blank"
+						title=" Aqui você compra ingressos para as principais opções de entretenimento em sua cidade">www.ticketsforfun.com.br</a></li>
+					<li><span>Venda a grupos:</span><a
+						href="mailto:grupos@t4f.com.br">grupos@t4f.com.br</a></li>
+				</ul>
+
+
+			</section>
+
+		</article>
+
+	</div>
+	<script>
+		jQuery(document).ready(function() {
+			$("#input-21f").rating({
+				starCaptions : function(val) {
+					if (val < 3) {
+						return val;
+					} else {
+						return 'high';
+					}
+				},
+				starCaptionClasses : function(val) {
+					if (val < 3) {
+						return 'label label-danger';
+					} else {
+						return 'label label-success';
+					}
+				},
+				hoverOnClear : false
+			});
+
+			$('#rating-input').rating({
+				min : 0,
+				max : 5,
+				step : 1,
+				size : 'lg',
+				showClear : false
+			});
+
+			$('#btn-rating-input').on('click', function() {
+				$('#rating-input').rating('refresh', {
+					showClear : true,
+					disabled : !$('#rating-input').attr('disabled')
+				});
+			});
+
+			$('.btn-danger').on('click', function() {
+				$("#kartik").rating('destroy');
+			});
+
+			$('.btn-success').on('click', function() {
+				$("#kartik").rating('create');
+			});
+
+			$('#rating-input').on('rating.change', function() {
+				alert($('#rating-input').val());
+			});
+
+			$('.rb-rating').rating({
+				'showCaption' : true,
+				'stars' : '3',
+				'min' : '0',
+				'max' : '3',
+				'step' : '1',
+				'size' : 'xs',
+				'starCaptions' : {
+					0 : 'status:nix',
+					1 : 'status:wackelt',
+					2 : 'status:geht',
+					3 : 'status:laeuft'
+				}
+			});
+		});
+	</script>
+
+	<div class="container">
+http://www.formget.com/bootstrap-comment-box/
+		<h1>COMMENT BOX</h1>
+		<!-------Wrap------------>
+		<div id="wrap">
+			<div id="main">
+				<div class="row">
+					<div class="col-md-5">
+						<h3 class="heading">Comments and Responses</h3>
+					</div>
+					<div class="col-md-7">
+						<div id="upper_blank"></div>
+					</div>
+				</div>
+			</div>
+
+			<p>Your email address will not be published. Required fields are
+				marked *</p>
+
+			<!------------Form Start---------->
+
+			<div id='form'>
+				<div class="row">
+					<div class="col-md-12">
+
+						<form action="" method="POST" id="commentform">
+
+							<div id="comment-name" class="form-row">
+								<input type="text" placeholder="Name (required)" name="dname"
+									id="name">
+							</div>
+							<div id="comment-email" class="form-row">
+								<input type="text"
+									placeholder="Mail (will not be published) (required)"
+									name="demail" id="email">
+							</div>
+							<div id="comment-url" class="form-row">
+								<input type="text" placeholder="Website" name="url" id="url">
+							</div>
+							<div id="comment-message" class="form-row">
+								<textarea name="comment" placeholder="Message" id="comment"></textarea>
+							</div>
+							<a href="#"><input type="submit" name="dsubmit"
+								id="commentSubmit" value="Submit Comment"></a> <input
+								style="width: 30px" type="checkbox" value="1" name="subscribe"
+								id="subscribe" checked="checked">
+							<p1>
+							<b>Notify me when new comments are added.</b></p1>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-------------------Reply Section------->
+		<div id="second">
+			<div class="row">
+				<div class="col-md-2">
+					<h3 class="second_heading">
+						<b>Leave a Reply</b>
+					</h3>
+				</div>
+				<div class="col-md-10">
+					<div class="blank"></div>
+				</div>
+			</div>
+		</div>
+		<div id="middle">
+			<form>
+				<a href="#"><input type="text" value="reply" name="dreply"
+					id="inner_reply"></a>
+			</form>
+		</div>
+
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="panel panel-white post panel-shadow">
+					<div class="post-heading">
+						<div class="pull-left image">
+							<img src="http://bootdey.com/img/Content/user_1.jpg"
+								class="img-circle avatar" alt="user profile image">
+						</div>
+						<div class="pull-left meta">
+							<div class="title h5">
+								<a href="#"><b>Ryan Haywood</b></a> made a post.
+							</div>
+							<h6 class="text-muted time">1 minute ago</h6>
+						</div>
+					</div>
+					<div class="post-description">
+						<p>Bootdey is a gallery of free snippets resources templates
+							and utilities for bootstrap css hmtl js framework. Codes for
+							developers and web designers</p>
+						<div class="stats">
+							<a href="#" class="btn btn-default stat-item"> <i
+								class="fa fa-thumbs-up icon"></i>2
+							</a> <a href="#" class="btn btn-default stat-item"> <i
+								class="fa fa-thumbs-down icon"></i>12
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="panel panel-white post panel-shadow">
+					<div class="post-heading">
+						<div class="pull-left image">
+							<img src="http://bootdey.com/img/Content/user_1.jpg"
+								class="img-circle avatar" alt="user profile image">
+						</div>
+						<div class="pull-left meta">
+							<div class="title h5">
+								<a href="#"><b>Ryan Haywood</b></a> made a post.
+							</div>
+							<h6 class="text-muted time">1 minute ago</h6>
+						</div>
+					</div>
+					<div class="post-description">
+						<p>Bootdey is a gallery of free snippets resources templates
+							and utilities for bootstrap css hmtl js framework. Codes for
+							developers and web designers</p>
+						<div class="stats">
+							<a href="#" class="btn btn-default stat-item"> <i
+								class="fa fa-thumbs-up icon"></i>2
+							</a> <a href="#" class="btn btn-default stat-item"> <i
+								class="fa fa-thumbs-down icon"></i>12
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /container -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+	<script>
+		window.jQuery
+				|| document.write(
+						'<script src="js/vendor/jquery-1.11.2.js"><\/script>')
+	</script>
+
+	<script src="js/vendor/bootstrap.min.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+					b.GoogleAnalyticsObject = l;
+					b[l] || (b[l] = function() {
+						(b[l].q = b[l].q || []).push(arguments)
+					});
+					b[l].l = +new Date;
+					e = o.createElement(i);
+					r = o.getElementsByTagName(i)[0];
+					e.src = '//www.google-analytics.com/analytics.js';
+					r.parentNode.insertBefore(e, r)
+				}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+
+
+
+
+</body>
+</html>
