@@ -1,24 +1,18 @@
 <?php
 /**
- * ActiveRecord/cliente: cliente.class.php
- *
  * Classe responsável por consultar e manipular as informações do cliente
  * contidas na DBA "dbcliente"
  */
 
-// Declaração do namespace
-namespace activeRecordCliente;
-
 // Incluindo a classe a ser utilizada
-use bin\dataBase;
+include_once 'dataBase.class.php';
 
-class cliente extends dataBase {
+
+class evento extends dataBase {
    
     public $conexao;
     
     
-    
-   
     /**
      * Função responsável pela realização da conexão com o banco de dados
      * está é iniciada assim que a classe é inicializada.
@@ -27,7 +21,7 @@ class cliente extends dataBase {
      * http://php.net/manual/pt_BR/language.oop5.decon.php
      */
     function __construct() {
-        $this->conexao = dataBase::connectionDbCliente($_SESSION["configuracao"]["data_base"]);
+        $this->conexao = dataBase::connectionDBA();
     }
     
     
