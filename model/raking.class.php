@@ -12,6 +12,7 @@ class ranking extends dataBase {
    
     public $conexao;
     public $ID_ranking;
+    public $FK_ID_evento;
     public $nota;
     /**
      * Função responsável pela realização da conexão com o banco de dados

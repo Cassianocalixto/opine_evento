@@ -11,8 +11,18 @@ include_once 'dataBase.class.php';
 class evento extends dataBase {
    
     public $conexao;
-    
-    
+    public $ID_evento;
+    public $titulo;
+    public $descricao;
+    public $data_inicio;
+    public $data_fim;
+    public $status;
+    public $FK_ID_categoria;
+    public $FK_ID_telefone;
+    public $site;
+    public $email;
+
+
     /**
      * Função responsável pela realização da conexão com o banco de dados
      * está é iniciada assim que a classe é inicializada.

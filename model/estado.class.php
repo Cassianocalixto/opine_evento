@@ -8,11 +8,12 @@
 include_once 'dataBase.class.php';
 
 
-class categoria extends dataBase {
+class estado extends dataBase {
    
     public $conexao;
-    public $ID_categoria;
-    public $tipo;
+    public $ID_estado;
+    public $estado;
+    public $uf;
 
 
     /**

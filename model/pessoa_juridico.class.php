@@ -15,10 +15,9 @@ class pessoa_juridica extends dataBase {
     public $razao_social;
     public $nome_fantasia;
     public $cnpj;
-    public $cpf;
     public $status;
     public $FK_ID_telefone;
-    public $FK_ID_longraduro;
+    public $FK_ID_logradouro;
     /**
      * Função responsável pela realização da conexão com o banco de dados
      * está é iniciada assim que a classe é inicializada.

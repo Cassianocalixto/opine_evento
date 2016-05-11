@@ -8,13 +8,14 @@
 include_once 'dataBase.class.php';
 
 
-class categoria extends dataBase {
+class usuario extends dataBase {
    
     public $conexao;
-    public $ID_categoria;
-    public $tipo;
-
-
+    public $ID_usuario;
+    public $Fk_ID_pj;
+    public $FK_ID_pf;
+    public $email;
+    public $senha;
     /**
      * Função responsável pela realização da conexão com o banco de dados
      * está é iniciada assim que a classe é inicializada.

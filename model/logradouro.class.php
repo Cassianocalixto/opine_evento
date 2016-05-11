@@ -8,12 +8,16 @@
 include_once 'dataBase.class.php';
 
 
-class categoria extends dataBase {
+class logradouro extends dataBase {
    
     public $conexao;
-    public $ID_categoria;
-    public $tipo;
-
+    public $ID_longradouro;
+    public $cep;
+    public $logradouro;
+    public $FK_ID_bairro;
+    public $FK_ID_estado;
+    public $FK_ID_cidade;
+    
 
     /**
      * Função responsável pela realização da conexão com o banco de dados

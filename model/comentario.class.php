@@ -8,17 +8,15 @@
 include_once 'dataBase.class.php';
 
 
-class pessoa_juridica extends dataBase {
+class comentario extends dataBase {
    
     public $conexao;
-    public $ID_pj;
-    public $razao_social;
-    public $nome_fantasia;
-    public $cnpj;
-    public $cpf;
-    public $status;
-    public $FK_ID_telefone;
-    public $FK_ID_longraduro;
+    public $ID_comentario;
+    public $FK_ID_evento;
+    public $data;
+    
+
+
     /**
      * Função responsável pela realização da conexão com o banco de dados
      * está é iniciada assim que a classe é inicializada.
