@@ -16,10 +16,21 @@ and open the template in the editor.
    <body>
 
 <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <div class="panel-title">Criar Login</div>
-                        </div>  
+                    <div class="panel-primary">
+                     <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Cadastro Empresa</a>
+            </div>
+            
+          </div>
+        </nav>
                         <div class="panel-body" >
                             <form id="signupform" class="form-horizontal" role="form">
                                 
@@ -28,27 +39,39 @@ and open the template in the editor.
                                     <span></span>
                                 </div>
                                  <div class="form-group">
-                                    <label for="suscard" class="col-md-3 control-label">Nome/<label>
+                                    <label for="suscard" class="col-md-3 control-label">Razão Social</label>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" name="lastname" placeholder="">
                                     </div>
                                 </div>                                  
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Nome Completo</label>
+                                    <label for="firstname" class="col-md-3 control-label">Nome Fantasia</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="Como consta no seu CPF">
+                                        <input type="text" class="form-control" name="firstname" placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">CPF</label>
+                                    <label for="lastname" class="col-md-3 control-label">CNPJ</label>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" name="lastname" placeholder="Apenas números, ex: 00011122233">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                 <div class="form-group">
+                                    <label for="estado" class="col-md-3 control-label">Estado</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="endereco" placeholder="Estado">
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <label for="cidade" class="col-md-3 control-label">Cidade</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="endereco" placeholder="Cidade">
+                                    </div>
+                                </div>
+                              <div class="form-group">
                                     <label for="endereco" class="col-md-3 control-label">Endereço</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="endereco" placeholder="Ex: Rua, Nº, Bairro, Cidade, Estado">
+                                        <input type="text" class="form-control" name="endereco" placeholder="Rua, Nº">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -73,18 +96,10 @@ and open the template in the editor.
                                 <div class="form-group">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> Cadastrar</button>
+                                        <a href="#" class="btn btn-lg btn-default">Cadastrar</a>
                                     </div>
                                 </div>
-                                
-                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                                    
-                                    <!--<div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Cadastre-se com o Facebook</button>
-                                    </div>-->
-                                    <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Voltar à tela de Login <<<</a></div>                                           
-                                        
-                                </div>         
+                                      
                             </form>
                          </div>
                     </div>
