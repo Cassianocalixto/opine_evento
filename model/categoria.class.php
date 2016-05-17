@@ -10,6 +10,7 @@ include_once 'dataBase.class.php';
 
 class categoria extends dataBase {
    
+    const tabela = "categoria"; 
     public $conexao;
     public $ID_categoria;
     public $tipo;
@@ -33,14 +34,15 @@ class categoria extends dataBase {
      * 
      * @return type
      */
-    public function selectID(){
-        $query        = "SELECT * FROM ".self::tabela." WHERE ID_cliente = :ID_cliente";
+    public function selectAll(){
+        $query        = "SELECT * FROM ".self::tabela." ORDER BY tipo asc";
         $consultation = $this->conexao->prepare($query);
-        $consultation->bindValue(":ID_cliente", $this->ID_cliente);
         $consultation->execute();
 
         return $consultation->fetchObject();
     }
+    
+    
     
 
 }
