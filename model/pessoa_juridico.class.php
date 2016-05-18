@@ -10,6 +10,7 @@ include_once 'dataBase.class.php';
 
 class pessoa_juridica extends dataBase {
    
+    const tabela = "pessoa_juridica";
     public $conexao;
     public $ID_pj;
     public $razao_social;
@@ -36,12 +37,21 @@ class pessoa_juridica extends dataBase {
      * 
      * @return type
      */
-    public function selectID(){
-        $query        = "SELECT * FROM ".self::tabela." WHERE ID_cliente = :ID_cliente";
+    public function insert(){
+          $query  = "INSERT INTO ".self::tabela.
+                  " (razao_social, nome_fantasia, cnpj, status, FK_ID_telefone, FK_ID_logradouro)".
+                  "VALUES".
+                  "(:razao_social, :nome_fantasia, :cnpj, :status, :FK_ID_telefone, :FK_ID_logradouro)";
         $consultation = $this->conexao->prepare($query);
-        $consultation->bindValue(":ID_cliente", $this->ID_cliente);
+        $consultation->bindValue(":razao_social", $this->razao_social);
+        $consultation->bindValue(":nome_fantasia", $this->nome_fantasia);
+        $consultation->bindValue(":cnpj", $this->cpf);
+        $consultation->bindValue(":status", $this->status);
+        $consultation->bindValue(":FK_ID_telefone", $this->FK_ID_telefone);
+        $consultation->bindValue(":FK_ID_logradouro", $this->FK_ID_logradouro);
+     
         $consultation->execute();
-
+        
         return $consultation->fetchObject();
     }
     
