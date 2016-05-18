@@ -9,7 +9,7 @@ include_once 'dataBase.class.php';
 
 
 class evento extends dataBase {
-   
+    const tabela = "evento";
     public $conexao;
     public $ID_evento;
     public $titulo;
@@ -41,10 +41,22 @@ class evento extends dataBase {
      * 
      * @return type
      */
-    public function selectID(){
-        $query        = "SELECT * FROM ".self::tabela." WHERE ID_cliente = :ID_cliente";
+   public function insert(){
+        $query  = "INSERT INTO ".self::tabela.
+                  " (`ID_evento`, `titulo`, `descricao`, `data_inicio`, `data_fim`,"
+                . " `status`, `FK_ID_categoria`, `FK_ID_telefone`, `site`, `email`) ".
+                  "VALUES".
+                  "(:titulo, :descricao, :data_inicio, :data_fim, :status, :FK_ID_categoria, :FK_ID_telefone, :site, :email )";
         $consultation = $this->conexao->prepare($query);
-        $consultation->bindValue(":ID_cliente", $this->ID_cliente);
+        $consultation->bindValue(":titulo", $this->titulo);
+        $consultation->bindValue(":descricao", $this->descricao);
+        $consultation->bindValue(":data_inicio", $this->data_inicio);
+        $consultation->bindValue(":data_fim", $this->data_fim);
+        $consultation->bindValue(":status", $this->status);
+        $consultation->bindValue(":FK_ID_categoria", $this->FK_ID_categoria);
+        $consultation->bindValue(":FK_ID_telefone", $this->FK_ID_telefone);
+        $consultation->bindValue(":site", $this->site);
+        $consultation->bindValue(":email", $this->email);       
         $consultation->execute();
 
         return $consultation->fetchObject();
