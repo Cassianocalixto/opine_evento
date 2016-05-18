@@ -52,7 +52,7 @@
         <div class="modal fade" id="modal" role="dialog"></div>
         
         <div class="container" style="position: relative; margin-top: 8%;">
-            <div id="conteudo" style="position: relative; top: 25px; margin-bottom: 10%"></div>
+            <div id="conteudo" style="position: relative; top: 25px; margin-bottom: 10%; margin-left: 10%"></div>
         </div>
         
         <footer class="footer">
