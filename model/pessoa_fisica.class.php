@@ -41,7 +41,7 @@ class pessoa_fisica extends dataBase {
     public function insert(){
         $query  = "INSERT INTO ".self::tabela.
                   " (nome, data_nasc, cpf, FK_ID_telefone, email, status)".
-                  "VALUES".
+                  " VALUES ".
                   "(:nome, :data_nasc, :cpf, :FK_ID_telefone, :email, :status)";
         $consultation = $this->conexao->prepare($query);
         $consultation->bindValue(":nome", $this->nome);

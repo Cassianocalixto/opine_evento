@@ -39,10 +39,7 @@ class categoria extends dataBase {
         $consultation = $this->conexao->prepare($query);
         $consultation->execute();
 
-        return $consultation->fetchObject();
+        return $consultation->fetchAll();
     }
     
-    
-    
-
 }

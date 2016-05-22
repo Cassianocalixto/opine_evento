@@ -5,10 +5,10 @@
  * Classe responsável por realizar a conexão com o banco de dados
  */
 class dataBase {
-    const host     = "mysql.hostinger.com.br";
-    const user     = "u361206234_root";
+    const host     = "localhost";//"mysql.hostinger.com.br";
+    const user     = "root";//"u361206234_root";
     const password = "123456";
-    const base     = "u361206234_opine";
+    const base     = "opine_evento";
      
     /**
      * Função responsável por efetivar a conexão

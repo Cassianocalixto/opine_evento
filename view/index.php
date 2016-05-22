@@ -7,7 +7,8 @@
         <title>Opine Evento</title>
         <link href="view/style/css/bootstrap.css" rel="stylesheet">
         <link href="view/style/css/bootstrap-theme.min.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="view/style/js/jquery_1.11.3.js"></script>
+        <script src="view/style/js/jquery.maskedinput.js"></script>
         <script src="view/style/js/bootstrap.min.js"></script>
         <script src="view/style/js/actions.js"></script>
     </head>
@@ -29,9 +30,13 @@
 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a onclick="evento.carregarCategoria('1')">Categoria 1</a></li>
-                        <li><a onclick="evento.carregarCategoria('1')">Categoria 2</a></li>
-                        <li><a onclick="evento.carregarCategoria('1')">Categoria 3</a></li>
+                        <?php foreach ($result_categoria as $item): ?>
+                             <li>
+                                <a onclick="evento.carregarCategoria('<?php echo $item['ID_categoria'];?>')" style="cursor:pointer;">
+                                    <?php echo $item['tipo'];?>
+                                </a>
+                            </li>
+                        <?php endforeach;?>
                     </ul>
 
                     <div class="navbar-form navbar-right" style="top: 13px; position:relative;">
