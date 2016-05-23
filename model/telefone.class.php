@@ -9,7 +9,8 @@ include_once 'dataBase.class.php';
 
 
 class telefone extends dataBase {
-   
+    const tabela = "telefone";
+
     public $conexao;
     public $ID_telefone;
     public $dd;
@@ -27,20 +28,28 @@ class telefone extends dataBase {
     }
     
     
-    /**
-     * Função responsável por resgatar as informações do cliente, por meio do
-     * atributo ID_cliente
-     * 
-     * @return type
-     */
-    public function selectID(){
-        $query        = "SELECT * FROM ".self::tabela." WHERE ID_cliente = :ID_cliente";
+    public function selectTelefone(){
+        $query  = "SELECT * FROM ".self::tabela." WHERE dd =:dd AND ".
+                  "numero =:numero AND classifica =:classifica";
+        
         $consultation = $this->conexao->prepare($query);
-        $consultation->bindValue(":ID_cliente", $this->ID_cliente);
+        $consultation->bindValue(":dd",         $this->dd);
+        $consultation->bindValue(":numero",     $this->numero);
+        $consultation->bindValue(":classifica", $this->classifica);
         $consultation->execute();
 
         return $consultation->fetchObject();
     }
     
+    public function insert(){
+        $query  = "INSERT INTO ".self::tabela. " (dd, numero, classifica)".
+                  " VALUES (:dd, :numero, :classifica)";
+                
+        $consultation = $this->conexao->prepare($query);
+        $consultation->bindValue(":dd",         $this->dd);
+        $consultation->bindValue(":numero",     $this->numero);
+        $consultation->bindValue(":classifica", $this->classifica);
+        $consultation->execute();
+    }
 
 }

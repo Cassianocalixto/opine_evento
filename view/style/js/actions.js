@@ -78,7 +78,8 @@ var evento = {
     
     btSalvarUsuario: function(){
         var me       = this,
-            dados    = {},    
+            dados    = {},
+            msg_erro = "",
             nome     = $.trim($("[name=nome]").val()),
             cpf      = $.trim($("[name=cpf]").val().replace(/[^0-9]+/g,'')),
             dt_nasc  = $.trim($("[name=dt_nasc]").val()),
@@ -100,7 +101,7 @@ var evento = {
                 validar_cpf     = me.validarCPF(cpf);
                 validar_dt_nasc = me.validarData(dt_nasc);
                 
-                if(cpf_tamanho === 11 && validar_email && validar_cpf ){
+                if(cpf_tamanho === 11 && validar_email && validar_cpf && validar_dt_nasc ){
                     dados.tipo_cadastro = me.tipo_cadastro;
                     dados.nome          = nome;
                     dados.cpf           = cpf;
@@ -114,15 +115,11 @@ var evento = {
                          console.log(retorno);
                     });
                 } else {
-                    if(cpf_tamanho !== 11 || !validar_cpf && !validar_email && !validar_dt_nasc){
-                        alert('CPF, E-mail e Data de nascimento inválida!');
-                    } else if(cpf_tamanho !== 11 || !validar_cpf && validar_email && validar_dt_nasc){
-                        alert('CPF inválido!');
-                    } else if(cpf_tamanho === 11 || validar_cpf && !validar_email && validar_dt_nasc){
-                        alert('E-mail inválido!');
-                    } else if(cpf_tamanho === 11 || validar_cpf && validar_email && !validar_dt_nasc){
-                        alert('Data de nascimento inválida!');
-                    }
+                    if(!validar_cpf)     { msg_erro += "CPF,"}
+                    if(!validar_email)   { msg_erro += "E-mail,"}
+                    if(!validar_dt_nasc) { msg_erro += "Data de nascimento,"}
+                    
+                    alert(msg_erro.substr(0, msg_erro.length-1)+' inválido!');
                 }
             } else {
                 (nome === "")    ? $("#pf_campo_nome").addClass("has-error")    : $("#pf_campo_nome").removeClass("has-error");
@@ -214,7 +211,6 @@ var evento = {
             mesmoDia = parseInt(dia,10) == parseInt(novaData.getDate()),
             mesmoMes = parseInt(mes,10) == parseInt(novaData.getMonth())+1,
             mesmoAno = parseInt(ano) == parseInt(novaData.getFullYear());
-            
             return (!((mesmoDia) && (mesmoMes) && (mesmoAno))) ? false : true;
     },
     
